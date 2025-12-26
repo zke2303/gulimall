@@ -3,7 +3,7 @@ ui/build/*
 
 .idea
 **/*.class
-
+**/*.lst
 *.log
 
 *.ctxt
