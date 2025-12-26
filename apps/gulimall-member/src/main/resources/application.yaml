@@ -1,6 +1,20 @@
 server:
-  port: 60000
+  port: 2002
 
 spring:
   application:
     name: gulimall-member
+
+  profiles:
+    active: dev
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+  type-aliases-package: com.nanfeng.gulimall.member.entity
+  global-config:
+    db-config:
+      id-type: auto
+
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
