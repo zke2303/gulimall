@@ -1,0 +1,6 @@
+server:
+  port: 90000
+
+spring:
+  application:
+    name: gulimall-ware

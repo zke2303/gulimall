@@ -1,0 +1,6 @@
+server:
+  port: 70000
+
+spring:
+  application:
+    name: gulimall-order
