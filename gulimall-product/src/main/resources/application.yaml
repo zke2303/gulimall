@@ -1,6 +1,0 @@
-server:
-  port: 80000
-
-spring:
-  application:
-    name: gulimall-product
