@@ -32,3 +32,10 @@ spring:
                 wall:
                     config:
                         multi-statement-allow: true
+
+    cloud:
+      nacos:
+        discovery:
+          server-addr: 47.110.74.7:8848
+        config:
+          server-addr: 47.110.74.7:8848
