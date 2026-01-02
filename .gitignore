@@ -1,4 +1,3 @@
-ui/build/*
 **/target/
 
 .idea
@@ -23,3 +22,22 @@ ui/build/*
 
 hs_err_pid*
 
+/log/
+
+
+# renren-fast-vue的ui界面忽略文件
+ui/renren-fast-vue/.DS_Store
+ui/renren-fast-vue/node_modules/
+ui/renren-fast-vue/dist/
+ui/renren-fast-vue/npm-debug.log*
+ui/renren-fast-vue/yarn-debug.log*
+ui/renren-fast-vue/yarn-error.log*
+ui/renren-fast-vue/test/unit/coverage/
+ui/renren-fast-vue/test/e2e/reports/
+ui/renren-fast-vue/selenium-debug.log
+
+# Editor directories and files
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
