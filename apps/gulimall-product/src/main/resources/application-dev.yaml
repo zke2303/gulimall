@@ -32,3 +32,8 @@ spring:
                 wall:
                     config:
                         multi-statement-allow: true
+logging:
+    file: log/gulimall-pms.log
+    level:
+        root: info
+        com.nanfeng.gulimall: debug

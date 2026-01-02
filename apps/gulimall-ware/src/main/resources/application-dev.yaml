@@ -32,3 +32,9 @@ spring:
                 wall:
                     config:
                         multi-statement-allow: true
+
+logging:
+    file: log/gulimall-wms.log
+    level:
+        root: info
+        com.nanfeng.gulimall: debug
