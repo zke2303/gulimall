@@ -1,9 +1,22 @@
 spring:
   application:
     name: gulimall-product
+  profiles:
+    active: dev
+
   cloud:
     nacos:
-      discovery:
-        server-addr: 47.110.74.7:8848
       config:
         server-addr: 47.110.74.7:8848
+        namespace: ${spring.profiles.active}
+        group: PRODUCT
+        file-extension: yaml
+        ext-config:
+          - data-id: mybatis-puls.yaml
+            group: SHARED
+            refresh: true
+      discovery:
+        server-addr: 47.110.74.7:8848
+        namespace: ${spring.profiles.active}
+        log-name: logs/nacos/nacos.log
+
