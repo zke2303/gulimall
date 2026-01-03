@@ -7,4 +7,5 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 47.110.74.7:8848
+        server-addr: ${NACOS_SERVER_ADDR:192.168.122.84:8848}
+        namespace: ${spring.profiles.active}

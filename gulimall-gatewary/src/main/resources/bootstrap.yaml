@@ -1,13 +1,16 @@
 spring:
   application:
-    name: gulimall-gateway
+    name: gulimall-gatewary
   profiles:
     active: dev
   cloud:
     nacos:
       config:
-        server-addr: 47.110.74.7:8848
+        server-addr: ${NACOS_SERVER_ADDR:192.168.122.84:8848}
         group: DEFAULT_GROUP
         file-extension: yaml
-        namespace: dev
+        namespace: ${spring.profiles.active}
         shared-dataids: mybatis-puls-share.yaml
+      discovery:
+        server-addr: ${NACOS_SERVER_ADDR:192.168.122.84:8848}
+        namespace: ${spring.profiles.active}

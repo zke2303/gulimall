@@ -1,14 +1,26 @@
 spring:
   # nacos 服务注册和发现
   cloud:
-    nacos:
-      discovery:
-        server-addr: 47.110.74.7:8848
     gateway:
       routes:
+        - id: gulimall-product-router
+          uri: lb://gulimall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/?(?<segment>.*), /$\{segment}
+          # http://localhost:8000/api/product/category/list/tree
+          # http://gulimall-product/product/category/list/tree
+
         - id: admin_router
           uri: lb://renren-fast
           predicates:
             - Path=/api/**
-          filters:
+          filters:  
             - RewritePath=/api/?(?<segment>.*), /renren-fast/$\{segment}
+
+
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+    reactor.netty.http.client: debug
