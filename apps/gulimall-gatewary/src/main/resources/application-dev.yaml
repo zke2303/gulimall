@@ -4,3 +4,11 @@ spring:
     nacos:
       discovery:
         server-addr: 47.110.74.7:8848
+    gateway:
+      routes:
+        - id: admin_router
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/?(?<segment>.*), /renren-fast/$\{segment}
